@@ -1,0 +1,36 @@
+$color-CambioClim: #a5d2e7;
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.container-fluid.index{
+    background-color: $color-CambioClim;
+    padding: 50px;
+}
+
+.container-fluid.index img{
+    object-fit: cover;
+    border-radius: 50%;
+    align-items:center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.textoIndex{
+    font-size: 80px;
+    font-family: $font-family-primary;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.textoIndex p{
+    font-size: 25px;
+    margin: 50px;
+    text-overflow: clip;
+    text-align: justify;
+    font-family: $font-family-primary;
+    max-width: 100%;
+}
