@@ -17,7 +17,9 @@ const routes: Routes = [
   {path:"cambioclim",component:CambioclimComponent},
   {path:"recetas",component:RecetasComponent},
   {path:"comunidad",component:ComunidadComponent},
-  {path:"inicioses",component:IniciosesComponent}
+  {path:"inicioses",component:IniciosesComponent},
+  {path:"registro",component:RegistroComponent},
+  {path:"areauser",component:AreauserComponent}
 ];
 
 @NgModule({

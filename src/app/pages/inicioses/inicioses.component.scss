@@ -1,0 +1,31 @@
+$font-family-primary: 'Urbanist', sans-serif;
+
+$color-alert: red;
+
+.inicioses{
+    font-family: $font-family-primary;
+}
+  
+#carouselExampleCaptions .carousel-item img {  
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height:100vh;
+}
+  
+#carouselExampleCaptions .carousel-item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.alert-danger{
+    color:$color-alert;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px $color-alert solid;
+}

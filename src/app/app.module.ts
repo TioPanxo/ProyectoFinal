@@ -16,6 +16,10 @@ import { RecetasComponent } from './pages/recetas/recetas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { BarranavuserComponent } from './componentes/barranavuser/barranavuser.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +34,14 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
     IniciosesComponent,
     RecetasComponent,
     RegistroComponent,
-    CarruselComponent
+    CarruselComponent,
+    BarranavuserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

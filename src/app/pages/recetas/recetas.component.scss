@@ -1,0 +1,40 @@
+$bg-recetas : rgb(147, 199, 150);
+$white: rgb(233, 233, 233);
+$color-font-navbar-active: #269753;
+$bg-color-hover: #1a693a;
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.recetas{
+    background-color: $bg-recetas;
+    font-family: $font-family-primary;
+}
+
+.recetas .texto{
+    text-align: center;
+    padding: 50px 150px;
+    font-size: 18px;
+}
+
+.col-lg-6.flex-column{
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    font-family: $font-family-primary;
+}
+
+.tarjetas{
+    margin-bottom: 50px;
+    width:400px ;
+    padding:0 65px;
+}
+
+.tarjetas .btn{
+    margin-bottom: 10px;
+    background-color: $color-font-navbar-active !important;
+    border: $white !important;
+}
+
+.tarjetas .btn:hover{
+    background-color: $bg-color-hover !important;
+}

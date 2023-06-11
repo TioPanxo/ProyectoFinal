@@ -1,0 +1,48 @@
+$white: rgb(233, 233, 233);
+$color-font-navbar-active: #269753;
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.nav-link svg {
+    width: 45px;
+    height: 45px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.nav-link:hover {
+    background-color: $white;
+    border-radius: 5px;
+}
+
+.nav-link.active{
+    color: $color-font-navbar-active !important;
+}
+
+.nav-link{
+    font-family: $font-family-primary;
+    transition: 0.5s;
+}
+
+.nav-link:hover{
+    color: $color-font-navbar-active !important;
+    animation: tilt-shaking 0.5s;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.header{
+    font-family:$font-family-primary !important;
+}
+
+.imagenMarcaHeader{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}

@@ -1,0 +1,16 @@
+$bg-color:rgb(127, 177, 127);
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.areaUser{
+    background-color: $bg-color;
+    font-family: $font-family-primary;
+}
+
+.card{
+    width: 18rem;
+}
+
+.container-fluid{
+    margin-bottom: 100px;
+}
