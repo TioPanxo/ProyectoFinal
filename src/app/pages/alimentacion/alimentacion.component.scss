@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$text-gray-dark-color : rgb(117, 115, 115);
+$text-gray-darker-color: rgb(83, 82, 82);
+$main-color:#b92b27;
+$main-color-darker:#941e1a;
+$white: rgb(233, 233, 233);
+$color-Primary: rgb(83, 83, 83);
+$color-CambioClim: #a5d2e7;
+$color-font-navbar-active: #269753;
+$color-Secondary: #1E8949;
+$bg-color-aboutUs: #bcedc6; 
+
+$font-family-primary: 'Urbanist', sans-serif;
+$font-family-primary-Impact: 'Bebas Neue', sans-serif;;
+$font-family-secondary: Arial, Helvetica, sans-serif;
+
+$dropdown-radius: 50px;
+
+
+.alimentacion{
+    background-image: url("../../../assets/Imagenes/background\ Alimentacion.jpg");
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+} 
+
+.cartel1{
+    margin-top: 280px;
+    margin-left: 200px;
+    display: block;
+    background-color: $white;
+    font-size: 40px;
+    font-family: $font-family-primary-Impact;
+    text-align: center;
+}
+
+.cartel1 p{
+    font-size: 18px;
+    text-align: justify;
+    font-family: $font-family-secondary;
+    margin: 15%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+
+.cartel1 button{
+    font-family: $font-family-secondary;
+}
+
+.section2 p{
+
+    margin: 20px 50px;
+    text-align: center;
+    font-size: 40px;
+    font-family: $font-family-primary-Impact;
+}
+
+.section2{
+    text-align: center;
+}
+
+.section2 ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin: 0 50px;
+    margin-top: 50px;
+}
+
+.section2 img{
+    margin-right: 25%;
+    margin-left: 25%;
+    border-radius: 13%;
+}
+
+.contenidoAlimentacion ul{
+    display: block;
+    font-size: 24px;
+    font-family: $font-family-primary-Impact;
+
+}
+
+.contenidoAlimentacion p{
+    margin: 0%;
+    margin-bottom: 10px;
+    font-size: 16px !important;
+    font-family: $font-family-secondary !important;
+}
+

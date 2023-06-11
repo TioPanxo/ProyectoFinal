@@ -1,0 +1,30 @@
+$color-Secondary: #1E8949;
+$bg-color-aboutUs: #bcedc6; 
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.tituloAboutUs{
+    color: $color-Secondary;
+}
+
+img{
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.aboutus{
+    background-color: $bg-color-aboutUs;
+}
+
+.aboutus p{
+    font-size: 25px;
+    margin: 50px;
+    text-overflow: clip;
+    text-align: center;
+    font-family: $font-family-primary;
+    align-items: center;
+}
+
+.breadcrumb{
+    margin: 0px 20px 20px 20px;
+}

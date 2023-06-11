@@ -1,0 +1,74 @@
+$bg-color-camb : rgb(166, 201, 235);
+$white: rgb(233, 233, 233);
+$color-font-navbar-active: #269753;
+$bg-color-hover: #1a693a;
+$bg-color-ultimasNoticias: rgb(115, 117, 238);
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.camb{
+    background-color: $bg-color-camb;
+}
+
+.texto{
+    text-align:center;
+    margin-bottom: 65px;
+    font-family: $font-family-primary;
+    font-size: 100px;
+}
+
+.texto p{
+    text-align: center ;
+    font-size: 20px !important;
+}
+
+.tarjetas{
+    margin-bottom: 50px;
+    width:500px ;
+    padding:0 65px;
+}
+
+.tarjetas .btn{
+    margin-bottom: 10px;
+    background-color: $color-font-navbar-active !important;
+    border: $white !important;
+}
+
+.tarjetas .btn:hover{
+    background-color: $bg-color-hover !important;
+}
+
+.container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 30px;
+    text-align: center;
+    justify-content: center;
+    font-family: $font-family-primary;
+}
+
+.camb ul li{
+    display: flex;
+}
+
+.ultimas-noticias{
+    background-color: $bg-color-ultimasNoticias;
+    padding: 10px 10px;
+    margin-top: 50px;
+    font-family: $font-family-primary;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-group .card{
+    background-color: $bg-color-ultimasNoticias;
+    margin:10px 20px;
+    width:500px;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.card-group .card img{
+    text-align: center;
+    justify-content: center;
+}
