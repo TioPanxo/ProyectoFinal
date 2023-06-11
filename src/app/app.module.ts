@@ -14,6 +14,7 @@ import { ComunidadComponent } from './pages/comunidad/comunidad.component';
 import { IniciosesComponent } from './pages/inicioses/inicioses.component';
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
     ComunidadComponent,
     IniciosesComponent,
     RecetasComponent,
-    RegistroComponent
+    RegistroComponent,
+    CarruselComponent
   ],
   imports: [
     BrowserModule,
