@@ -94,32 +94,16 @@
 
     <div class="ultimas-noticias">
         <div>
-            <h1>Ultimas noticias</h1>
-            <p>Enterate de lo ultimo que se habla respecto al cambio climatico</p>
+            <h1>Algunos cortometrajes sobre cambio climatico</h1>
+            <p>Para Reflexionar</p>
         </div>
         
-        <div class="card-group container-flex">
-            <div class="card" >
-                <img src="../../../assets/Imagenes/cambioClim.jpg" class="img-fluid">
+        <div class="card-group container">
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-1 mb-2" *ngFor="let v of videos">
+                <youtube-player [videoId]="v.video" [height]="200" [width]="300"></youtube-player>
                 <div class="card-body">
-                    <h5 class="card-title">Paris vuelve verde</h5>
-                    <p class="card-text">Miles de personas marcharon por un mundo mas consiente respecto al cambio climático...</p>
-                </div>
-            </div>
-
-            <div class="card h-100">
-                <img src="../../../assets/Imagenes/oman.jpeg" class="img-fluid">
-                <div class="card-body">
-                    <h5 class="card-title">Momento historico</h5>
-                    <p class="card-text">Por primera vez en miles de años vuelve a nevar en la Ciudad de Fahud en Oman...</p>
-                </div>
-            </div>
-
-            <div class="card h-100">
-                <img src="../../../assets/Imagenes/sequia.jpg" class="img-fluid">
-                <div class="card-body">
-                    <h5 class="card-title">Sin espacio para la humedad</h5>
-                    <p class="card-text">Las sequías siguen afectando gravemente a la flora y fauna de Chile...</p>
+                    <h4 class="card-title">{{v.nombre}}</h4>
+                    <p class="card-text">{{v.desc}}</p>
                 </div>
             </div>
         </div>

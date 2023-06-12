@@ -21,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { BarranavuserComponent } from './componentes/barranavuser/barranavuser.component';
 import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.component';
 
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.comp
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

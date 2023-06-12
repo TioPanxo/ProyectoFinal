@@ -34,7 +34,7 @@
 
         </div>
         <div class="col-lg-5 d-flex flex-column">
-            <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 w-100 mb-auto">
+            <div class="px-lg-5 pt-lg-4 pb-lg-3 p-3 w-100 mb-auto">
                 <a href="index.html">
                     <img src="../../../assets/Imagenes/logomarca.jpg" class="img-fluid">
                 </a>
@@ -42,22 +42,22 @@
             
             <div class="px-lg-5 py-lg-4 p-4 w-100 aling-self-center">
                 <h1 class="fw-bold mb-4">Completa los datos para registrarte.</h1>
-                <form class="mb-5" name="registration" [formGroup]="formulario" (ngSubmit)="inicioSesion" action="inicioses">
-                    <div class="mb-4">
+                <form class="mb-3" name="registration" [formGroup]="formulario" (ngSubmit)="inicioSesion" action="inicioses">
+                    <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Nombre Completo</label>
                         <input formControlName="name" class="form-control " name="nombre" placeholder="Ingresa tu nombre." id="name" >
                         <div *ngIf="name.errors && (name.dirty || name.touched)">
                             <div *ngIf="name.hasError('required')" class="alert-danger">El Nombre es obligatorio</div>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Alias</label>
                         <input formControlName="alias" class="form-control " name="nickname" placeholder="Ingresa tu sobrenombre." id="nickname" >
                         <div *ngIf="alias.errors && (alias.dirty || alias.touched)">
                             <div *ngIf="alias.hasError('required')" class="alert-danger">El Alias es obligatorio</div>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Correo electrónico.</label>
                         <input formControlName="email" type="email" class="form-control " name="email" placeholder="Ingresa tu email." id="email" >
                         <div *ngIf="email.errors && (email.dirty || email.touched)">
@@ -66,7 +66,7 @@
                     
                         </div> 
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña.</label>
                         <input formControlName="password" type="password" class="form-control mb-2" name="password" placeholder="Ingresa tu contraseña." id="password">
                         <div *ngIf="password.errors && (password.dirty || password.touched)">
@@ -85,7 +85,7 @@
                     <button type="submit" class="btn btn-outline-dark flex-grow-1 ms-2" ><i class="fa-brands fa-facebook me-2"></i>Facebook</button>
                 </div>
             </div>
-            <div class="text-center px-lg-5 pt-lg-3 pb-lg4 p-4 w-100 mt-auto">
+            <div class="text-center px-lg-5 pt-lg-3 pb-lg4 p-3 w-100 mt-auto">
                 <p class="d-inline-block mb-0">¿Ya tienes cuenta?</p> <a href="inicioses" class=" fw-bold text-decoration-none" style="color: green;">Inicia sesión.</a>
             </div>
 
