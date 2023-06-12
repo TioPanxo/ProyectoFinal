@@ -19,6 +19,8 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BarranavuserComponent } from './componentes/barranavuser/barranavuser.component';
+import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.component';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +37,15 @@ import { BarranavuserComponent } from './componentes/barranavuser/barranavuser.c
     RecetasComponent,
     RegistroComponent,
     CarruselComponent,
-    BarranavuserComponent
+    BarranavuserComponent,
+    DetallerecetaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

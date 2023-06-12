@@ -12,7 +12,7 @@ $color-Secondary: #1E8949;
 $bg-color-aboutUs: #bcedc6; 
 
 $font-family-primary: 'Urbanist', sans-serif;
-$font-family-primary-Impact: 'Bebas Neue', sans-serif;;
+$font-family-primary-Impact: 'Bebas Neue', sans-serif;
 $font-family-secondary: Arial, Helvetica, sans-serif;
 
 $dropdown-radius: 50px;
@@ -32,14 +32,14 @@ $dropdown-radius: 50px;
     display: block;
     background-color: $white;
     font-size: 40px;
-    font-family: $font-family-primary-Impact;
+    font-family: $font-family-primary;
     text-align: center;
 }
 
 .cartel1 p{
     font-size: 18px;
     text-align: justify;
-    font-family: $font-family-secondary;
+    font-family: $font-family-primary;
     margin: 15%;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -47,7 +47,7 @@ $dropdown-radius: 50px;
 }
 
 .cartel1 button{
-    font-family: $font-family-secondary;
+    font-family: $font-family-primary;
 }
 
 .section2 p{
@@ -55,7 +55,7 @@ $dropdown-radius: 50px;
     margin: 20px 50px;
     text-align: center;
     font-size: 40px;
-    font-family: $font-family-primary-Impact;
+    font-family: $font-family-primary;
 }
 
 .section2{
@@ -79,7 +79,7 @@ $dropdown-radius: 50px;
 .contenidoAlimentacion ul{
     display: block;
     font-size: 24px;
-    font-family: $font-family-primary-Impact;
+    font-family: $font-family-primary;
 
 }
 
@@ -87,6 +87,6 @@ $dropdown-radius: 50px;
     margin: 0%;
     margin-bottom: 10px;
     font-size: 16px !important;
-    font-family: $font-family-secondary !important;
+    font-family: $font-family-primary !important;
 }
 

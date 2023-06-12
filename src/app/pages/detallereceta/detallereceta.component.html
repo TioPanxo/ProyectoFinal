@@ -1,0 +1,28 @@
+<div *ngIf="detalleReceta!=null" class="detalleRecetas">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="" style="color: #1E8949;">Home</a></li>
+            <li class="breadcrumb-item"><a href="recetas" style="color: #1E8949;">Recetas</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #1E8949;">{{detalleReceta.nombre}}</li>
+        </ol>
+    </nav>
+    
+    <div class="seccion">
+        <h2><b>{{detalleReceta.nombre}}</b></h2>
+        <img src="{{detalleReceta.src}}" class="img-fluid">
+        <p><b>Ingredientes</b></p>
+        <p>{{detalleReceta.ingredientes}}</p>
+        <p><b>Procedimiento</b></p>
+        <p>{{detalleReceta.procedimiento}}</p>
+        <a href="recetas" class="btn btn-success">Volver</a>
+    </div>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="" style="color: #1E8949;">Home</a></li>
+            <li class="breadcrumb-item"><a href="recetas" style="color: #1E8949;">Recetas</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #1E8949;">{{detalleReceta.nombre}}</li>
+        </ol>
+    </nav>
+</div>
+    

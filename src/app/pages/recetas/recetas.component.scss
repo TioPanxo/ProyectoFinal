@@ -38,3 +38,10 @@ $font-family-primary: 'Urbanist', sans-serif;
 .tarjetas .btn:hover{
     background-color: $bg-color-hover !important;
 }
+
+.tarjetas img{
+    width: 200px;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}

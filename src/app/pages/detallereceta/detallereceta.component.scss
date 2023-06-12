@@ -1,0 +1,20 @@
+$bg-recetas : rgb(147, 199, 150);
+$white: rgb(233, 233, 233);
+$color-font-navbar-active: #269753;
+$bg-color-hover: #1a693a;
+
+$font-family-primary: 'Urbanist', sans-serif;
+
+.detalleRecetas{
+    background-color: $bg-recetas;
+    font-family: $font-family-primary;
+}
+
+.seccion{
+    text-align: center;
+    padding: 25px 100px;
+}
+
+nav{
+    background-color: $bg-recetas;
+}

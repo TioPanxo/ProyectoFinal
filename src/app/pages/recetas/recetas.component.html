@@ -27,50 +27,14 @@
 
         <div class="col-lg-6 flex-column">
             <div class="row">
-                <div class="col-md-6 tarjetas">
+                <div *ngFor="let item of datos; let i=index;" class="col-md-6 tarjetas">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Plato de comida</h5>
-                            <img src="../../../assets/Imagenes/img 2.png" class="card-img-top" style="width: 150px;">
+                            <h5 class="card-title">{{item.nombre}}</h5>
+                            <img src="{{item.src}}" class="card-img-top">
                         </div>
                         <div>
-                            <a href="recetas" class="btn btn-success">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-md-6 tarjetas">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Plato de comida</h5>
-                            <img src="../../../assets/Imagenes/img 2.png" class="card-img-top" style="width: 150px;">
-                        </div>
-                        <div>
-                            <a href="recetas" class="btn btn-success">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-6 tarjetas">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Plato de comida</h5>
-                            <img src="../../../assets/Imagenes/img 2.png" class="card-img-top" style="width: 150px;">
-                        </div>
-                        <div>
-                            <a href="recetas" class="btn btn-success">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-6 tarjetas">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Plato de comida</h5>
-                            <img src="../../../assets/Imagenes/img 2.png" class="card-img-top" style="width: 150px;">
-                        </div>
-                        <div>
-                            <a href="recetas" class="btn btn-success">Ver más</a>
+                            <a [routerLink]="['/','detalle',i]" routerLinkActive="router-link-active" class="btn btn-success">Ver más</a>
                         </div>
                     </div>
                 </div>
