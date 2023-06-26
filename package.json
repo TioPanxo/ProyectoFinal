@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ng-recaptcha": "^12.0.1"
+  }
+}

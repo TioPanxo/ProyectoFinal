@@ -26,6 +26,7 @@ import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.comp
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{RecaptchaModule} from 'ng-recaptcha'
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -57,7 +58,8 @@ import { ToastrModule } from 'ngx-toastr';
     YouTubePlayerModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    CommonModule
+    CommonModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

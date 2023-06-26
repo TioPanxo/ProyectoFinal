@@ -14,6 +14,7 @@ export class IniciosesComponent implements OnInit {
     formulario!:FormGroup;
     email:AbstractControl;
     password:AbstractControl;
+    captcha: string;
 
     usuario:Usuarios={
         id_Usuario:0,
@@ -31,9 +32,15 @@ export class IniciosesComponent implements OnInit {
         });
         this.email= this.formulario.controls['email'];  
         this.password=this.formulario.controls['password'];
+        this.captcha='';
     }
 
     ngOnInit(): void {
+    }
+
+    resolved(captchaResponse:string){
+        this.captcha = captchaResponse;
+        console.log('resolved captcha with response: ' + this.captcha)
     }
     
     submit(){

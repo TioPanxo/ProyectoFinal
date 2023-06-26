@@ -62,6 +62,13 @@
                         </div>
                         <a href="#" id="emailHelp" class="form-text text-muted text-decoration-none">¿Has olvidado tu contraseña?</a>
                     </div>
+                    <div [hidden]="captcha">
+                        <p>Complete el captcha para poder ingresar</p>
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LfanNEmAAAAAHP6O04MQDKSs9k7YlRq3Kz8HJSO"></re-captcha>
+                    </div><div [hidden]="!captcha">
+                        <p>funciona correctamente</p>
+                    </div>
+                    
 
                     <button (click)="submit()" class="btn btn-success w-100">Ingresar</button>
                     
