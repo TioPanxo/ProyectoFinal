@@ -44,13 +44,25 @@ app.get("/getUsers",(req:any,res:any)=>{
 //post
 app.post("/getUser",(req:any, res:any)=>{
     let email=req.body.email;
-    //let password=encriptar(req.body.password,salt);
+    let password=encriptar(req.body.password,salt);
 
     
-    connection.query("SELECT * FROM usuarios WHERE email=?",[email],function(error:any,results:any,fields:any){
+    connection.query("SELECT * FROM usuarios WHERE email=? and password=?",[email,password],function(error:any,results:any,fields:any){
         if(error) throw error;
+        if(results.length <= 0){
+            res.send(JSON.stringify({"mensaje":"El email o la contraseña son incorrectos, o no se encuentra registrado","resultado":results,"error":true}));
+            return;
+        }
+        else{
+            if(results.rol.value == 'admin'){
+                res.send(JSON.stringify({"mensaje":"Bienvenido","resultado":results,"error":false,"admin":true}));
+            }
+            else{
+                res.send(JSON.stringify({"mensaje":"Bienvenido","resultado":results,"error":false,"admin":false}));
+            }
+            
+        }
         
-        res.send(JSON.stringify(results));
         //console.log(results);
     });
 });
@@ -63,10 +75,22 @@ app.put("/registro",(req:any,res:any)=>{
     let password=encriptar(req.body.password,salt);
     let rol = "user";
 
-    connection.query("INSERT INTO usuarios (name, alias, email, password, rol) VALUES (?,?,?,?,?)",[name,alias,email,password,rol],function(error:any,results:any,fields:any){
-        if (error) throw error;
-        res.send(JSON.stringify({"mensaje":true,"resultado":results}));
+    connection.query("select * from usuarios where email=?",[email],function(error:any,results:any,fields:any){
+        if(error)throw error;
+        if(results.length <=0){
+            connection.query("INSERT INTO usuarios (name, alias, email, password, rol) VALUES (?,?,?,?,?)",[name,alias,email,password,rol],function(error:any,results:any,fields:any){
+                if (error) throw error;
+                res.send(JSON.stringify({"mensaje":"Cuenta registrada satisfactoriamente","resultado":results,"error":false}));
+                return;
+            });
+        }else{
+            res.send(JSON.stringify({"mensaje":"El correo electronico ya esta en uso","resultado":results,"error":true}));
+            return;
+        }
     });
+
+
+    
 });
 
 //put admin
@@ -84,11 +108,12 @@ app.put("/registroAdmin",(req:any,res:any)=>{
 });
 
 //delete
-app.delete("/delete",(req:any,res:any)=>{
-    let email=req.body.email;
+app.delete("/delete/:id",(req:any,res:any)=>{
+    const{id}= req.params
 
-    connection.query("DELETE FROM usuarios WHERE email = ?",[email],function(error:any,results:any,fields:any){
+    connection.query(`DELETE FROM usuarios WHERE id_usuario = ${id}`,function(error:any,results:any,fields:any){
         if(error) throw error;
+
         res.send(JSON.stringify({"mensaje":true,"resultado":results}));
     });
 });
@@ -106,32 +131,32 @@ app.post("/getReceta",(req:any, res:any)=>{
     let id=req.body.id;
     //let password=encriptar(req.body.password,salt);
 
-    connection.query("SELECT * FROM recetas WHERE id=?",[id],function(error:any,results:any,fields:any){
+    connection.query("SELECT * FROM recetas WHERE id_receta=?",[id],function(error:any,results:any,fields:any){
         if(error) throw error;
         
         res.send(JSON.stringify(results));
         //console.log(results);
     });
 });
-
+ 
 //put
 app.put("/aniadirReceta",(req:any,res:any)=>{
     let nombre=req.body.nombre;
     let src=req.body.src;
     let ingredientes=req.body.ingredientes;
-    let procedimientos=req.body.procedimiento;
+    let procedimientos=req.body.procedimientos;
 
     connection.query("INSERT INTO recetas (nombre, src, ingredientes, procedimientos) VALUES (?,?,?,?)",[nombre,src,ingredientes,procedimientos],function(error:any,results:any,fields:any){
         if (error) throw error;
-        res.send(JSON.stringify({"mensaje":true,"resultado":results}));
+        res.send(JSON.stringify({"mensaje":"Receta agregada satisfactoriamente","resultado":results,"error":false}));
     });
 });
 
 //delete
-app.delete("/delete",(req:any,res:any)=>{
-    let id=req.body.id;
+app.delete('/deleteRec/:id',(req:any,res:any)=>{
+    const{id} = req.params
 
-    connection.query("DELETE FROM recetas WHERE id_receta = ?",[id],function(error:any,results:any,fields:any){
+    connection.query(`DELETE FROM recetas WHERE id_receta = '${id}'`,function(error:any,results:any,fields:any){
         if(error) throw error;
         res.send(JSON.stringify({"mensaje":true,"resultado":results}));
     });

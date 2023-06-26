@@ -12,18 +12,45 @@ import {ServiciorecetasService} from '../../servicios/serviciorecetas.service';
 export class RecetasComponent implements OnInit{
 
     datos:Array<Recetas>=[];
-
+    
     constructor(private ServicioRecetas:ServiciorecetasService){
 
     }
 
     ngOnInit(): void{
-        this.ServicioRecetas.getJSON().subscribe(data=>{
+        /*this.ServicioRecetas.getJSON().subscribe(data=>{
             for(let i=0;i<data.length;i++)
                 this.datos.push(data[i]);
               
         
             console.log(this.datos);
-        });
+        });*/
+        this.listarRecetas();
     }
+
+    listarRecetas(){
+        this.ServicioRecetas.getRecetas().subscribe(
+            res=>{
+                console.log(res);
+                this.datos=<any>res;
+            },
+            err=> console.log(err)
+        );
+    }
+
+    agregarReceta(){
+
+    }
+
+    eliminarReceta(id:string){
+        this.ServicioRecetas.deleteReceta(id).subscribe(
+            res=>{
+                console.log('receta eliminada');
+                this.listarRecetas();
+            },
+            err=> console.log(err)
+        );
+    }
+
+    
 }

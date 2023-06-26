@@ -21,7 +21,7 @@ export class DetallerecetaComponent implements OnInit{
 
   ngOnInit(): void{
 
-    this.ServicioRecetas.getJSON().subscribe(data=>{
+    /*this.ServicioRecetas.getJSON().subscribe(data=>{
       for(let i=0;i<data.length;i++)
         this.datos.push(data[i]);
       
@@ -31,6 +31,19 @@ export class DetallerecetaComponent implements OnInit{
         this.detalleReceta=this.datos[this.id];
         console.log(this.detalleReceta);
       });
-    });
+    });*/
+
+    this.ServicioRecetas.getRecetas().subscribe(
+      res=>{
+          //console.log(res);
+          this.datos=<any>res;
+          this.ruta2=this.ruta.params.subscribe(parametros=>{
+            this.id=parametros['id'];
+            this.detalleReceta=this.datos[this.id];
+            console.log(this.detalleReceta);
+          });
+      },
+      err=> console.log(err)
+  );
   }
 }

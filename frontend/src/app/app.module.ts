@@ -15,6 +15,8 @@ import { IniciosesComponent } from './pages/inicioses/inicioses.component';
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
+import {AgregarRecetaComponent} from './func/agregar-receta/agregar-receta.component';
+
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -22,6 +24,10 @@ import { BarranavuserComponent } from './componentes/barranavuser/barranavuser.c
 import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.component';
 
 import {YouTubePlayerModule} from '@angular/youtube-player';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     RegistroComponent,
     CarruselComponent,
     BarranavuserComponent,
-    DetallerecetaComponent
+    DetallerecetaComponent,
+    AgregarRecetaComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,10 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

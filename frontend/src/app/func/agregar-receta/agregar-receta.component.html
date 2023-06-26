@@ -1,0 +1,46 @@
+<div class="container-flex">
+    <p>Agregar Receta</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <form class="mb-3 mx-5">
+                <div class="mb-3">
+                    <label class="form-label">Nombre de Receta</label>
+                    <input type="text" [(ngModel)]="receta.nombre" name="nombre" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Link de la imagen</label>
+                    <input type="text" [(ngModel)]="receta.src" name="src" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ingredientes</label>
+                <input type="text" [(ngModel)]="receta.ingredientes" name="ingredientes" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Procedimiento</label>
+                    <input type="text" [(ngModel)]="receta.procedimientos" name="procedimientos" class="form-control">
+                </div>
+
+                <button (click)="agregarReceta()" class="btn btn-success">Agregar</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <form class="mb-3 mx-5">
+                <div class="mb-3 img-card col-sm-6">
+                    <img src="{{receta.src}}" alt="" class="img-fluid">
+                    
+                </div>
+                <div class="mb-3">
+                    <p><b>Nombre Receta: {{receta.nombre}}</b></p>
+                </div>
+                <div class="mb-3">
+                    <p><b>Ingredientes</b></p>
+                    <p>{{receta.ingredientes}}</p>
+                </div>
+                <div class="mb-3">
+                    <p><b>Procedimiento</b></p>
+                    <p>{{receta.procedimientos}}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

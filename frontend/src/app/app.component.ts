@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+//import { inicioSesion } from './servicios/usuarios.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ export class AppComponent {
   showHeader= true;
   showFooter= true;
   showNavUser= false;
+  showAdmin=false;
 
   constructor(private router:Router){
     router.events.subscribe(

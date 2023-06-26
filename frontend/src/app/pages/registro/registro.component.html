@@ -42,24 +42,24 @@
             
             <div class="px-lg-5 py-lg-4 p-4 w-100 aling-self-center">
                 <h1 class="fw-bold mb-4">Completa los datos para registrarte.</h1>
-                <form class="mb-3" name="registration" [formGroup]="formulario" (ngSubmit)="inicioSesion" action="inicioses">
+                <form class="mb-3" name="registration" [formGroup]="formulario" action="inicioses">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Nombre Completo</label>
-                        <input formControlName="name" class="form-control " name="nombre" placeholder="Ingresa tu nombre." id="name" >
+                        <input [(ngModel)]="usuario.name" formControlName="name" class="form-control " name="nombre" placeholder="Ingresa tu nombre." id="name" >
                         <div *ngIf="name.errors && (name.dirty || name.touched)">
                             <div *ngIf="name.hasError('required')" class="alert-danger">El Nombre es obligatorio</div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Alias</label>
-                        <input formControlName="alias" class="form-control " name="nickname" placeholder="Ingresa tu sobrenombre." id="nickname" >
+                        <input [(ngModel)]="usuario.alias" formControlName="alias" class="form-control " name="nickname" placeholder="Ingresa tu sobrenombre." id="nickname" >
                         <div *ngIf="alias.errors && (alias.dirty || alias.touched)">
                             <div *ngIf="alias.hasError('required')" class="alert-danger">El Alias es obligatorio</div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label fw-bold">Correo electrónico.</label>
-                        <input formControlName="email" type="email" class="form-control " name="email" placeholder="Ingresa tu email." id="email" >
+                        <input [(ngModel)]="usuario.email" formControlName="email" type="email" class="form-control " name="email" placeholder="Ingresa tu email." id="email" >
                         <div *ngIf="email.errors && (email.dirty || email.touched)">
                             <div *ngIf="email.hasError('required')" class="alert-danger">El correo electrónico es obligatorio</div>
                             <div *ngIf="email.hasError('email')" class="alert-danger">El correo electrónico no tiene el formato adecuado</div>
@@ -68,15 +68,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña.</label>
-                        <input formControlName="password" type="password" class="form-control mb-2" name="password" placeholder="Ingresa tu contraseña." id="password">
+                        <input [(ngModel)]="usuario.password" formControlName="password" type="password" class="form-control mb-2" name="password" placeholder="Ingresa tu contraseña." id="password">
                         <div *ngIf="password.errors && (password.dirty || password.touched)">
-                            
+                            <div *ngIf="password.hasError('pattern')" class="alert-danger">La contraseña debe contener por lo menos 1 mayuscula, 1 minuscula y una letra</div>
                             <div *ngIf="password.hasError('required')" class="alert-danger">La Contraseña es obligatoria</div>
                             <div *ngIf="password.hasError('minlength')" class="alert-danger">La Contraseña debe tener 8 caracteres como minimo</div>
                         </div> 
                     </div>
                     <a>
-                        <button [disabled]="formulario.invalid" type="submit" class="btn btn-success w-100">Registrarse</button>
+                        <button [disabled]="formulario.invalid" (click)="registro()" type="submit" class="btn btn-success w-100">Registrarse</button>
                     </a>
                 </form>
                 <p class="fw-bold text-center text-muted">O registrate con</p>

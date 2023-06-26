@@ -1,7 +1,7 @@
 export interface Recetas{
-    id:number;
+    id_Receta?:number;
     nombre:String;
     src:String;
     ingredientes:String;
-    procedimiento:String;
+    procedimientos:String;
 }

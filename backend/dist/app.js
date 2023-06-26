@@ -34,11 +34,22 @@ app.get("/getUsers", (req, res) => {
 //post
 app.post("/getUser", (req, res) => {
     let email = req.body.email;
-    //let password=encriptar(req.body.password,salt);
-    connection.query("SELECT * FROM usuarios WHERE email=?", [email], function (error, results, fields) {
+    let password = (0, encriptar_1.encriptar)(req.body.password, salt);
+    connection.query("SELECT * FROM usuarios WHERE email=? and password=?", [email, password], function (error, results, fields) {
         if (error)
             throw error;
-        res.send(JSON.stringify(results));
+        if (results.length <= 0) {
+            res.send(JSON.stringify({ "mensaje": "El email o la contraseña son incorrectos, o no se encuentra registrado", "resultado": results, "error": true }));
+            return;
+        }
+        else {
+            if (results.rol.value == 'admin') {
+                res.send(JSON.stringify({ "mensaje": "Bienvenido", "resultado": results, "error": false, "admin": true }));
+            }
+            else {
+                res.send(JSON.stringify({ "mensaje": "Bienvenido", "resultado": results, "error": false, "admin": false }));
+            }
+        }
         //console.log(results);
     });
 });
@@ -49,10 +60,21 @@ app.put("/registro", (req, res) => {
     let email = req.body.email;
     let password = (0, encriptar_1.encriptar)(req.body.password, salt);
     let rol = "user";
-    connection.query("INSERT INTO usuarios (name, alias, email, password, rol) VALUES (?,?,?,?,?)", [name, alias, email, password, rol], function (error, results, fields) {
+    connection.query("select * from usuarios where email=?", [email], function (error, results, fields) {
         if (error)
             throw error;
-        res.send(JSON.stringify({ "mensaje": true, "resultado": results }));
+        if (results.length <= 0) {
+            connection.query("INSERT INTO usuarios (name, alias, email, password, rol) VALUES (?,?,?,?,?)", [name, alias, email, password, rol], function (error, results, fields) {
+                if (error)
+                    throw error;
+                res.send(JSON.stringify({ "mensaje": "Cuenta registrada satisfactoriamente", "resultado": results, "error": false }));
+                return;
+            });
+        }
+        else {
+            res.send(JSON.stringify({ "mensaje": "El correo electronico ya esta en uso", "resultado": results, "error": true }));
+            return;
+        }
     });
 });
 //put admin
@@ -69,9 +91,9 @@ app.put("/registroAdmin", (req, res) => {
     });
 });
 //delete
-app.delete("/delete", (req, res) => {
-    let email = req.body.email;
-    connection.query("DELETE FROM usuarios WHERE email = ?", [email], function (error, results, fields) {
+app.delete("/delete/:id", (req, res) => {
+    const { id } = req.params;
+    connection.query(`DELETE FROM usuarios WHERE id_usuario = ${id}`, function (error, results, fields) {
         if (error)
             throw error;
         res.send(JSON.stringify({ "mensaje": true, "resultado": results }));
@@ -88,7 +110,7 @@ app.get("/getRecetas", (req, res) => {
 app.post("/getReceta", (req, res) => {
     let id = req.body.id;
     //let password=encriptar(req.body.password,salt);
-    connection.query("SELECT * FROM recetas WHERE id=?", [id], function (error, results, fields) {
+    connection.query("SELECT * FROM recetas WHERE id_receta=?", [id], function (error, results, fields) {
         if (error)
             throw error;
         res.send(JSON.stringify(results));
@@ -100,17 +122,17 @@ app.put("/aniadirReceta", (req, res) => {
     let nombre = req.body.nombre;
     let src = req.body.src;
     let ingredientes = req.body.ingredientes;
-    let procedimientos = req.body.procedimiento;
+    let procedimientos = req.body.procedimientos;
     connection.query("INSERT INTO recetas (nombre, src, ingredientes, procedimientos) VALUES (?,?,?,?)", [nombre, src, ingredientes, procedimientos], function (error, results, fields) {
         if (error)
             throw error;
-        res.send(JSON.stringify({ "mensaje": true, "resultado": results }));
+        res.send(JSON.stringify({ "mensaje": "Receta agregada satisfactoriamente", "resultado": results, "error": false }));
     });
 });
 //delete
-app.delete("/delete", (req, res) => {
-    let id = req.body.id;
-    connection.query("DELETE FROM recetas WHERE id_receta = ?", [id], function (error, results, fields) {
+app.delete('/deleteRec/:id', (req, res) => {
+    const { id } = req.params;
+    connection.query(`DELETE FROM recetas WHERE id_receta = '${id}'`, function (error, results, fields) {
         if (error)
             throw error;
         res.send(JSON.stringify({ "mensaje": true, "resultado": results }));

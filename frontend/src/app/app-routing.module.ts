@@ -12,6 +12,7 @@ import { IniciosesComponent } from './pages/inicioses/inicioses.component';
 import { RecetasComponent } from './pages/recetas/recetas.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { DetallerecetaComponent } from './pages/detallereceta/detallereceta.component';
+import { AgregarRecetaComponent } from './func/agregar-receta/agregar-receta.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:"inicioses",component:IniciosesComponent},
   {path:"registro",component:RegistroComponent},
   {path:"areauser",component:AreauserComponent},
-  {path:"detalle/:id",component:DetallerecetaComponent}
+  {path:"detalle/:id",component:DetallerecetaComponent},
+  {path:"newReceta",component:AgregarRecetaComponent},
 ];
 
 @NgModule({
